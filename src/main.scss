@@ -1,0 +1,56 @@
+$red: #fa5252;
+@mixin square($size) {
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+}
+
+body{
+  position: fixed; 
+	overflow-y: scroll;
+  background-image: url("https://images.unsplash.com/photo-1561536709-c11136e23ae5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+  background-size: cover;
+  background-position-x: center;
+  background-repeat:no-repeat;
+  width: 100%;
+  text-align: center;
+}
+
+div{
+  h1{
+    color: aliceblue;
+    text-align: center;
+    padding-left: 50%;
+    padding-top: 25%;
+    font-size: 50px;
+  }
+}
+
+body{
+  text-align: center;    
+}
+.search{
+  text-align: center;
+  margin-top: 20%;
+}
+.searchText{
+  font-size: 32px;
+}
+
+.SassComponent {
+  display: flex;
+ .box {
+    background: red; // 일반 CSS 에선 .SassComponent .box 와 마찬가지
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    &.red {
+      // .red 클래스가 .box 와 함께 사용 됐을 때
+      background: $red;
+      @include square(5);
+    }
+    &:hover {
+      // .box 에 마우스 올렸을 때
+      background: black;
+    }
+  }
+}
